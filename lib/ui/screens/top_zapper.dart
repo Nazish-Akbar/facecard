@@ -61,14 +61,20 @@ class TopZapper extends StatelessWidget {
                                 height: 50,
                                 margin: EdgeInsets.only(
                                     left: 10, right: 10, top: 2, bottom: 2),
-                                decoration: BoxDecoration(color: Colors.white),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(currentPerson.title),
-                                    Text(currentPerson.subtile),
-                                  ],
+                                decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(10)),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(currentPerson.title),
+                                      Text(currentPerson.subtile),
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
@@ -76,7 +82,23 @@ class TopZapper extends StatelessWidget {
                         ),
                       ),
                       Positioned(
-                          right: 20, bottom: 5, child: Icon(Icons.favorite)),
+                          right: 20,
+                          bottom: 0,
+                          child: Container(
+                            height: 30,
+                            width: 30,
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(60)),
+                            child: IconButton(
+                              icon: Icon(
+                                Icons.favorite,
+                                color: Colors.red,
+                                size: 20,
+                              ),
+                              onPressed: () {},
+                            ),
+                          )),
                     ],
                   );
                 },

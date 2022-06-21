@@ -15,15 +15,16 @@ class newcard extends StatelessWidget {
       children: [
         Card(
           color: Colors.white,
-          elevation: 5,
+          // elevation: 5,
           margin: EdgeInsets.only(left: 20, right: 20, bottom: 10),
           child: TextFormField(
             // minLines: ,
             decoration: InputDecoration(
+              fillColor: Colors.transparent,
               hintText: hinttext,
               prefixIcon: prefixIcon,
               hintStyle: TextStyle(
-                // color: Colors.white,
+                //color: Colors.white,
                 fontSize: 12,
               ),
               border: OutlineInputBorder(borderSide: BorderSide.none),

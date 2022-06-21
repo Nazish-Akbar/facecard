@@ -96,6 +96,9 @@ class SignUp extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
+                      Card(
+                        color: Colors.black,
+                      ),
                       Text('I Agreed with the'),
                       TextButton(
                         onPressed: () {},
@@ -111,7 +114,6 @@ class SignUp extends StatelessWidget {
               ),
             ),
             Row(
-              
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text('the'),

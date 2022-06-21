@@ -36,35 +36,21 @@ class WelcomeScreen extends StatelessWidget {
                     SizedBox(
                       height: 50,
                     ),
-                    Container(
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      margin: EdgeInsets.only(left: 20, right: 20),
-                      child: newcard(
-                        hinttext: 'Enter your  Email',
-                        prefixIcon: Icon(
-                          Icons.mail,
-                          color: Colors.yellow,
-                        ),
+                    newcard(
+                      hinttext: 'Enter your  Email',
+                      prefixIcon: Icon(
+                        Icons.mail,
+                        color: Colors.yellow,
                       ),
                     ),
                     SizedBox(
                       height: 30,
                     ),
-                    Container(
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      margin: EdgeInsets.only(left: 20, right: 20),
-                      child: newcard(
-                        hinttext: 'Enter your Pasword ',
-                        prefixIcon: Icon(
-                          Icons.lock,
-                          color: Colors.yellow,
-                        ),
+                    newcard(
+                      hinttext: 'Enter your Pasword ',
+                      prefixIcon: Icon(
+                        Icons.lock,
+                        color: Colors.yellow,
                       ),
                     ),
                     SizedBox(

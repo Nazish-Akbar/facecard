@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 
 import '../../custom_widget/custom_button.dart';
@@ -35,15 +37,18 @@ class LoginScreen extends StatelessWidget {
               ]),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(30),
-            child: BottomButton(
-              color: Colors.white,
-              icon: Icons.network_cell,
-              title: 'SignUp with Google',
-              Style: TextStyle(color: Color.fromARGB(255, 88, 88, 88)),
-              onPressed: () {},
-            ),
+          SizedBox(
+            height: 20,
+          ),
+          BottomButton(
+            color: Colors.white,
+            icon: Icons.network_cell,
+            title: 'SignUp with Google',
+            Style: TextStyle(color: Color.fromARGB(255, 88, 88, 88)),
+            onPressed: () {},
+          ),
+          SizedBox(
+            height: 15,
           ),
           BottomButton(
             color: Color.fromARGB(255, 88, 38, 226),
