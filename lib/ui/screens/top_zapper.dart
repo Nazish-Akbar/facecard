@@ -1,3 +1,4 @@
+import 'package:facecard/ui/screens/top_zapper_view_model.dart';
 import 'package:flutter/material.dart';
 
 import '../../custom_widget/searchbar.dart';
@@ -32,37 +33,57 @@ class TopZapper extends StatelessWidget {
             )
           ],
         ),
-        body: Container(
-            child: Column(
-          children: [
-            SearchBar(),
-            Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: CircleAvatar(
-                    radius: 30,
-                    backgroundImage: AssetImage('images/person.jpg'),
-                  ),
-                ),
-                Expanded(
-                  child: Card(
-                    margin: EdgeInsets.all(10),
-                    elevation: 4,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                    child: ListTile(
-                      title: Text('Emaa Khan'),
-                      subtitle: Text('this is subtitle.....'),
-                      trailing: Text('10,000'),
-                    ),
-                  ),
-                ),
-              ],
-            )
-          ],
-        )),
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              SearchBar(),
+              ListView.builder(
+                shrinkWrap: true,
+                itemCount: personList.length,
+                itemBuilder: (context, index) {
+                  final currentPerson = personList[index];
+                  return Stack(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(top: 10),
+                        child: Row(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: CircleAvatar(
+                                radius: 30,
+                                backgroundImage:
+                                    AssetImage('images/person.jpg'),
+                              ),
+                            ),
+                            Expanded(
+                              child: Container(
+                                height: 50,
+                                margin: EdgeInsets.only(
+                                    left: 10, right: 10, top: 2, bottom: 2),
+                                decoration: BoxDecoration(color: Colors.white),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(currentPerson.title),
+                                    Text(currentPerson.subtile),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Positioned(
+                          right: 20, bottom: 5, child: Icon(Icons.favorite)),
+                    ],
+                  );
+                },
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
